@@ -7,15 +7,17 @@ export class Trip {
         this.id = data.id || generateId
         this.title = data.title
         this.notes = data.notes
-        this.color = data.color
         this.collapsed = data.collapsed || false
         this.date = new Date(data.date)
     }
+
+
     get Template() {
         return `
-        <div id="trip">
-            <h2 class="p-2">Disneyland</h2>
-        </div>
+        <div class="col-12 bg-dark text-light">
+            <div">
+                <h2 class="p-2">${this.title}</h2>
+            </div>
         <div class="row p-2">
             <div class="col-2 col-md-2 text-center">
                 <h4 class="p-1">Type</h4>
@@ -36,6 +38,8 @@ export class Trip {
                 <h4 class="p-1">Cost</h4>
             </div>
         </div>
+
+   ${this.Reservations}
     `
     }
 
