@@ -12,21 +12,66 @@
   <title>wayFinder</title>
 </head>
 
-<body>
+<body class="bg-grey">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
       <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
         <span class="ms-2">wayFinder</span>
       </a>
     </nav>
   </header>
   <main>
-    <div class="container-fluid">
+    <div class="container p-2 bg-light">
       <div class="row">
         <div class="col-12">
-          <div id="app"></div>
+
+          <!-- SECTION TRIP -->
+          <div id="trip">
+            <h2 class="p-2">Disneyland</h2>
+          </div>
+          <div class="row p-2">
+            <div class="col-2 col-md-2 text-center">
+              <h4 class="p-1">Type</h4>
+            </div>
+            <div class="col-5 col-md-2 text-center">
+              <h4 class="p-1">Name</h4>
+            </div>
+            <div class="col-5 col-md-2 text-center">
+              <h4 class="p-1">Confirmation</h4>
+            </div>
+            <div class="col-6 col-md-2 text-center">
+              <h4 class="p-1">Address</h4>
+            </div>
+            <div class="col-6 col-md-2 text-center">
+              <h4 class="p-1">Date</h4>
+            </div>
+            <div class="col-12 col-md-2 text-end">
+              <h4 class="p-1">Cost</h4>
+            </div>
+          </div>
+
+
+          <!-- SECTION RESERVATIONS -->
+          <div class="row pt-3 m-1 elevation-4 bg-primary">
+            <div id="reservations" class="col-2 col-md-2 text-center">
+              <p class="p-1" id="type">Hotel</p>
+            </div>
+            <div class="col-5 col-md-2 text-center">
+              <p class="p-1" id="name">Castle</p>
+            </div>
+            <div class="col-5 col-md-2 text-center">
+              <p class="p-1" id="confim">aexnew4r5353f</p>
+            </div>
+            <div class="col-6 col-md-2 text-center">
+              <p class="p-1" id="address">Anaheim, California</p>
+            </div>
+            <div class="col-6 col-md-2 text-center">
+              <p class="p-1" id="date">2022</p>
+            </div>
+            <div class="col-12 col-md-2 text-end">
+              <p class="p-1" id="cost">$700</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
