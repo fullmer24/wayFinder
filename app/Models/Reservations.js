@@ -4,7 +4,7 @@ import { generateId } from "../Utils/generateId.js";
 
 export class Reservation {
     constructor(data) {
-        this.id = generateId
+        this.id = data.id || generateId
         this.type = data.type
         this.name = data.name
         this.address = data.address
