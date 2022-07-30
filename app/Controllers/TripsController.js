@@ -1,6 +1,7 @@
 import { ProxyState } from "../AppState.js"
 
 
+// NOTE create reservation controller ans both services
 
 
 
@@ -17,9 +18,26 @@ function _drawTrip() {
 
 export class TripsController {
     constructor() {
-        // console.log(`trip contoller working`);
-        // ProxyState.on('trips', _drawTrip)
-        // ProxyState.on('reservations', _drawTrip)
+        console.log(`trip contoller working`);
+        ProxyState.on('trips', _drawTrip)
+        ProxyState.on('reservations', _drawTrip)
         _drawTrip()
     }
+
+    createTrip() {
+        // @ts-ignore
+        window.event.preventDefault()
+        console.log('creating trip');
+        // @ts-ignore
+        let form = window.event.target
+        let newTrip = {
+            type: form.type.value,
+            name: form.name.value,
+            confirmation: confirmation.name.value
+
+
+        }
+    }
+
+
 }

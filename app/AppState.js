@@ -34,7 +34,7 @@ class AppState extends EventEmitter {
       name: 'Delta',
       address: 'BOI',
       date: '07/30/2022',
-      cost: '$120',
+      cost: '120',
       tripId: 1
     }),
     new Reservation({
@@ -43,7 +43,7 @@ class AppState extends EventEmitter {
       name: 'airBnB',
       address: '1099 W John Wayne Ave, Anaheim, California',
       date: '07/30/2022',
-      cost: '$200',
+      cost: '200',
       tripId: 1
     })
   ]

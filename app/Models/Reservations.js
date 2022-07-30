@@ -15,7 +15,7 @@ export class Reservation {
 
     get Template() {
         return `
-        <section class="row pt-3 m-1 elevation-4 bg-primary">
+        <section class="row pt-3 elevation-4 m-1 bg-primary">
             <div id="reservations" class="col-2 col-md-2 text-center">
                 <p class="p-1" id="type">${this.type}</p>
             </div>
@@ -23,7 +23,7 @@ export class Reservation {
                 <p class="p-1" id="name">${this.name}</p>
             </div>
             <div class="col-5 col-md-2 text-center">
-                <p class="p-1" id="confim">${this.id}</p>
+                <p class="p-1" id="confimation">${this.id}</p>
             </div>
             <div class="col-6 col-md-2 text-center">
                 <p class="p-1" id="address">${this.address}</p>

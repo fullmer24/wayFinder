@@ -70,7 +70,47 @@
         </section> -->
       </div>
     </div>
+
+
+    <div class="container elevation-4 p-2 mt-3">
+      <div class="row">
+        <form class="col-12" id="form" onsubmit="app.tripsController.createTrip()">
+          <div class="row">
+            <div class="col-6 col-md-2 p-2">
+              <label for="type" required class="form-label">Type</label>
+              <input name="type" id="type" type="text">
+            </div>
+
+            <div class="col-6 col-md-2 p-2">
+              <label for="name" required class="form-label">Name</label>
+              <input name="name" id="name" type="text">
+            </div>
+
+            <div class="col-6 col-md-3 p-2">
+              <label for="confirmation" class="form-label">Confirmation</label>
+              <input name="confirmation" id="confirmation" type="text">
+            </div>
+
+            <div class="col-6 col-md-3 p-2">
+              <label for="address" required class="form-label">Address</label>
+              <input name="address" id="address" type="text">
+            </div>
+
+            <div class="col-6 col-md-2 p-2">
+              <label for="date" required class="form-label">Date</label>
+              <input name="date" id="date" type="date">
+            </div>
+            <div>
+              <label for="notes" class="form-label">Notes</label>
+              <textarea name="notes" id="notes" class="form-control" aria-describedby="helpId"
+                placeholder=""></textarea>
+            </div>
+          </div>
+          <button class="btn btn-success">ADD</button>
+        </form>
+      </div>
     </div>
+
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
