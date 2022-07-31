@@ -12,13 +12,15 @@ export class Trip {
     }
 
 
+
+    // NOTE add delete button
     get Template() {
         return `
         <div class="col-12 bg-dark text-light">
             <div">
-                <h2 class="p-2">${this.title}</h2>
+                <h2 class="p-2">${this.title} | ${this.date.toLocaleDateString('en-US')}</h2>
             </div>
-        <div class="row p-2">
+        <div class="row p-2 m-3">
             <div class="col-2 col-md-2 text-center">
                 <h4 class="p-1">Type</h4>
             </div>
@@ -35,11 +37,24 @@ export class Trip {
                 <h4 class="p-1">Date</h4>
             </div>
             <div class="col-12 col-md-2 text-end">
-                <h4 class="p-1">Cost</h4>
+                <h4 class="p-1">Cost</h4>                
             </div>
         </div>
+        <div class="row">
+        ${this.Reservations}
+        </div>
+        <div class="row p-2">
+            <label class="col-6 form-label">Notes</label>                                
+            <textarea rows="2" class="form-label p-2 m-3" onblur="app.tripsController.editTrip('${this.id}')">${this.notes}</textarea>
+        </div>    
+        
+        
+        
+    
 
-   ${this.Reservations}
+        
+
+   
     `
     }
 

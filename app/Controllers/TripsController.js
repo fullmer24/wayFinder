@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js"
-// import { TripsServices } from "../services/TripsServices.js"
+import { tripsService } from "../services/TripsService.js"
 
 
 // NOTE create reservation controller ans both services
@@ -29,18 +29,18 @@ export class TripsController {
         // @ts-ignore
         window.event.preventDefault()
         console.log('creating trip');
-        // @ts-ignore
-        // let form = window.event.target
-        // let newTrip = {
-        //     type: form.type.value,
-        //     name: form.name.value,
-        //     confirmation: form.confirmation.value,
-        //     address: form.address.value,
-        //     date: form.dispatchEvent.value,
-        //     cost: form.cost.value,
-        // }
-        // console.log(newTrip);
-        // TripsServices.createTrip(newTrip)
+
+        let form = window.event.target
+        let newTrip = {
+            type: form.type.value,
+            name: form.name.value,
+            confirmation: form.confirmation.value,
+            address: form.address.value,
+            date: form.dispatchEvent.value,
+            cost: form.cost.value,
+        }
+        console.log(newTrip);
+        tripsService.createTrip(newTrip)
 
 
 
