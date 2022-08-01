@@ -13,12 +13,12 @@ export class Trip {
 
 
 
-    // NOTE add delete button
+    // NOTE delete button becomes part of the entire container
     get Template() {
         return `
         <div class="col-12 bg-dark text-light">
             <div">
-                <h2 class="p-2">${this.title} | ${this.date.toLocaleDateString('en-US')}</h2>
+                <h2 class="p-2" minlength=3 max-length=15>${this.title} | ${this.date.toLocaleDateString('en-US')}</h2>
             </div>
         <div class="row p-2 m-3">
             <div class="col-2 col-md-2 text-center">
@@ -47,6 +47,9 @@ export class Trip {
             <label class="col-6 form-label">Notes</label>                                
             <textarea rows="2" class="form-label p-2 m-3" onblur="app.tripsController.editTrip('${this.id}')">${this.notes}</textarea>
         </div>    
+        <div>
+        <i class="mdi mdi-delete-forever selectable px-2" onclick="app.itemsController.deleteItem('${this.id}')"></i>
+        </div>
         
         
         
@@ -69,6 +72,13 @@ export class Trip {
         }
     }
 
+
+    get TripTotal() {
+        let total = 0
+        let reservations = ProxyState.reservations.filter(reservation => reservation.tripId == this.id)
+        reservations.forEach(reservation => total += reservation.cost)
+        return total
+    }
 
 }
 

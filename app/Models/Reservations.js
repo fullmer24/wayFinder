@@ -1,4 +1,3 @@
-import { ProxyState } from "../AppState.js";
 import { generateId } from "../Utils/generateId.js";
 
 
@@ -33,6 +32,9 @@ export class Reservation {
             </div>
             <div class="col-12 col-md-2 text-end">
                 <p class="p-1" id="cost">$${this.cost}</p>
+            </div>
+            <div>
+            <i class="mdi mdi-delete-forever selectable px-2" onclick="app.itemsController.deleteItem('${this.id}')"></i>
             </div>
         </section>
         `

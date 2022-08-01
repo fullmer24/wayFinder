@@ -1,17 +1,19 @@
-import { ProxyState } from "../AppState.js"
-import { tripsService } from "../services/TripsService.js"
+import { ProxyState } from "../AppState.js";
+import { tripsService } from "../services/TripsService.js";
+import { loadState, saveState } from "../Utils.LocalStorage.js";
+import { Pop } from "../Utils.Pop.js";
 
 
-// NOTE create reservation controller ans both services
+
 
 
 
 
 function _drawTrip() {
     let template = ''
-    // let trips = ProxyState.trips.sort((a, b) => a.date - b.date)
+    let trips = ProxyState.trips.sort((a, b) => a.date - b.date)
     // console.log(template);
-    ProxyState.trips.forEach(t => template += t.Template)
+    trips.forEach(t => template += t.Template)
     // @ts-ignore
     document.getElementById('trip').innerHTML = template
 }
@@ -22,6 +24,9 @@ export class TripsController {
         console.log(`trip controller working`);
         ProxyState.on('trips', _drawTrip)
         ProxyState.on('reservations', _drawTrip)
+        ProxyState.on('trips', saveState)
+        ProxyState.on('reservations', saveState)
+        loadState()
         _drawTrip()
     }
 
@@ -36,14 +41,26 @@ export class TripsController {
             name: form.name.value,
             confirmation: form.confirmation.value,
             address: form.address.value,
-            date: form.dispatchEvent.value,
+            date: form.date.value,
             cost: form.cost.value,
         }
         console.log(newTrip);
         tripsService.createTrip(newTrip)
+        Pop.toast('Trip Created', 'success')
+    }
 
+    async deleteTrip(id) {
+        if (await Pop.confirm()) {
+            console.log(`deleting trip`, id);
+            tripsService.deleteTrip(id)
+        }
+    }
 
-
+    editTrip(id) {
+        console.log(`editing`, id);
+        console.log(window.event.target.value);
+        let newText = window.event.target.value
+        tripsService.editTrip(id, newText)
     }
 
 
