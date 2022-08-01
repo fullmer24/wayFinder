@@ -37,12 +37,9 @@ export class TripsController {
 
         let form = window.event.target
         let newTrip = {
-            type: form.type.value,
-            name: form.name.value,
-            confirmation: form.confirmation.value,
-            address: form.address.value,
+            title: form.title.value,
             date: form.date.value,
-            cost: form.cost.value,
+            notes: form.notes.value,
         }
         console.log(newTrip);
         tripsService.createTrip(newTrip)
