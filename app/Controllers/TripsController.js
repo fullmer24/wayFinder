@@ -1,12 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { tripsService } from "../services/TripsService.js";
-import { loadState, saveState } from "../Utils.LocalStorage.js";
-import { Pop } from "../Utils.Pop.js";
-
-
-
-
-
+import { loadState, saveState } from "../Utils/LocalStorage.js";
+import { Pop } from "../Utils/Pop.js";
 
 
 function _drawTrip() {

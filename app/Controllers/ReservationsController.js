@@ -1,7 +1,5 @@
 import { reservationsService } from "../Services/ReservationsService.js";
 
-
-
 export class ReservationsController {
     constructor() {
         console.log(`reservation controller loaded`);
