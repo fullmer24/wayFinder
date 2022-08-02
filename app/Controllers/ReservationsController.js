@@ -15,7 +15,8 @@ export class ReservationsController {
             confirmation: form.confirmation.value,
             address: form.address.value,
             date: form.date.value,
-            cost: form.cost.value,
+            cost: parseInt(form.cost.value),
+            tripId: tripId
         }
         console.log((newReservation));
         reservationsService.createReservation(newReservation)

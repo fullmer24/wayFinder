@@ -27,7 +27,7 @@
   <main>
     <div class="container p-2 bg-light">
       <div class="row" id="trip">
-        <!-- <div class="col-12">
+        <div class="col-12">
           <div">
             <h2 class="p-2">Disneyland</h2>
         </div>
@@ -71,52 +71,49 @@
           <div class="col-12 col-md-2 text-end">
             <p class="p-1" id="cost">$700</p>
           </div>
-        </section> -->
+        </section>
       </div>
     </div>
 
 
-    <div class="container elevation-4 p-2 mt-3">
-      <div class="row">
-        <form class="col-12" id="form" onsubmit="app.tripsController.createTrip()">
-          <div class="row">
-            <div class="col-12">
-              <label for="title" required class="form-label">Title</label>
-              <input name="title" type="text" minlength="3" maxlength="15" id="title">
-            </div>
-            <div class="col-6 col-md-2 p-2">
-              <label for="type" required class="form-label">Type</label>
-              <input name="type" id="type" type="text">
-            </div>
+    <div class="container elevation-4 p-2 mt-3" id="form">
 
-            <div class="col-6 col-md-2 p-2">
-              <label for="name" required class="form-label">Name</label>
-              <input name="name" id="name" type="text">
-            </div>
+      <form class="row" onsubmit="app.tripsController.createTrip()">
 
-            <div class="col-6 col-md-3 p-2">
-              <label for="confirmation" class="form-label">Confirmation</label>
-              <input name="confirmation" id="confirmation" type="text">
-            </div>
+        <div class="col-12">
+          <label for="title" class="form-label">Title</label>
+          <input minlength="3" maxlength="15" name="title" type="text" required id="title">
+        </div>
+        <div class="col-6 col-md-2 p-2">
+          <label for="type" class="form-label">Type</label>
+          <input name="type" id="type" required type="text">
+        </div>
 
-            <div class="col-6 col-md-3 p-2">
-              <label for="address" required class="form-label">Address</label>
-              <input name="address" id="address" type="text">
-            </div>
+        <div class="col-6 col-md-2 p-2">
+          <label for="name" class="form-label">Name</label>
+          <input name="name" id="name" required type="text">
+        </div>
 
-            <div class="col-6 col-md-2 p-2">
-              <label for="date" required class="form-label">Date</label>
-              <input name="date" id="date" type="date">
-            </div>
-            <div>
-              <label for="notes" class="form-label">Notes</label>
-              <textarea name="notes" id="notes" class="form-control" aria-describedby="helpId"
-                placeholder=""></textarea>
-            </div>
-          </div>
-          <button class="btn btn-success">ADD</button>
-        </form>
-      </div>
+        <div class="col-6 col-md-3 p-2">
+          <label for="confirmation" class="form-label">Confirmation</label>
+          <input name="confirmation" id="confirmation" type="number">
+        </div>
+
+        <div class="col-6 col-md-3 p-2">
+          <label for="address" class="form-label">Address</label>
+          <input name="address" id="address" required type="text">
+        </div>
+
+        <div class="col-6 col-md-2 p-2">
+          <label for="date" class="form-label">Date</label>
+          <input name="date" id="date" required type="date">
+        </div>
+        <div>
+          <label for="notes" class="form-label">Notes</label>
+          <textarea name="notes" id="notes" class="form-control" aria-describedby="helpId" placeholder=""></textarea>
+        </div>
+        <button class="btn btn-success">ADD</button>
+      </form>
     </div>
 
   </main>

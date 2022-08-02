@@ -7,9 +7,8 @@ import { Pop } from "../Utils/Pop.js";
 function _drawTrip() {
     let template = ''
     let trips = ProxyState.trips.sort((a, b) => a.date - b.date)
-    // console.log(template);
+    console.log(trips);
     trips.forEach(t => template += t.Template)
-    // @ts-ignore
     document.getElementById('trip').innerHTML = template
 }
 
@@ -26,7 +25,6 @@ export class TripsController {
     }
 
     createTrip() {
-        // @ts-ignore
         window.event.preventDefault()
         console.log('creating trip');
 
